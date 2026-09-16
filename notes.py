@@ -1,12 +1,9 @@
-s = input()
-new_s = ''
-l = set()
-l.add(0)
-for i in s:
-    if i not in new_s:
-        new_s = new_s + i
-    else:
-        l.add(len(new_s))
-        new_s = new_s[new_s.index(i) + 1:] + i
-    l.add(len(new_s))
-print(max(l))
+mat = [[1,2,3],[4,5,6],[7,8,9]]
+n = len(mat)
+for i in range(n):
+    for j in range(i+1,n):
+        mat[i][j] , mat[j][i] = mat[j][i] , mat[i][j]
+print(mat)
+for i in range(n):
+    mat[i].reverse()
+print(mat)
